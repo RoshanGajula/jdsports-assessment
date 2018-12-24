@@ -1,0 +1,32 @@
+
+<aside class="featured">
+      <h4 class="featured-Label">Featured</h4>
+      <!-- <div class="box featured">box-1</div> -->
+
+    <div class="box featured" *ngFor = "let card of featuredContentResp">
+            <div class="row">
+              <div class="column">
+                  <div class="row featured-title">
+                    <h4>{{card.volumeInfo.title}}</h4> 
+                    <h4>{{card.volumeInfo.subtitle}}</h4>
+                  </div>
+                  <div class="row featured-items">
+                    <div class="featured-author">
+                    <b>Authors:</b> {{card.volumeInfo.authors.toString()}}
+                    </div>
+                    <div class="featured-pages">
+                      <b>Pages:</b> {{card.volumeInfo.pageCount}}
+                    </div>
+                    <div class="featured-description">
+                      <b>Description:</b> <span title="{{card.volumeInfo.description}}">{{(card.volumeInfo.description)?card.volumeInfo.description.substring(0,140): 'No Description'}}</span>
+                    </div>
+                  </div>
+                  <div class="column bookimg-cntr">
+                    <img src="https://via.placeholder.com/120x120.png?text=Logo" />
+                  </div>
+              </div>
+            </div>
+    </div>
+
+
+</aside>

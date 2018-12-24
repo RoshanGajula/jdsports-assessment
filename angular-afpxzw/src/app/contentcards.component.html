@@ -1,0 +1,26 @@
+<div class="content">
+  <div class="box" *ngFor = "let card of contentResp" (click) = "handleCardSelection($event, card.id)" id="{{card.id}}" [ngClass]="{'is-selected': selectedItemId === card.id}">
+    <div class="row">
+      <div class="column bookimg-cntr">
+          <img src="https://via.placeholder.com/120x120.png?text=Logo" />
+      </div>
+      <div class="column">
+          <div class="row content-title">
+            <h4>{{card.volumeInfo.title}}</h4> 
+            <h4>{{card.volumeInfo.subtitle}}</h4>
+          </div>
+          <div class="row content-items">
+            <div class="content-author">
+            <b>Authors:</b> {{card.volumeInfo.authors.toString()}}
+            </div>
+            <div class="content-pages">
+              <b>Pages:</b> {{card.volumeInfo.pageCount}}
+            </div>
+            <div class="content-description">
+              <b>Description:</b> <span title="{{card.volumeInfo.description}}">{{(card.volumeInfo.description)?card.volumeInfo.description.substring(0,140): 'No Description'}}</span>
+            </div>
+          </div>  
+      </div>
+    </div>
+  </div>
+</div>
