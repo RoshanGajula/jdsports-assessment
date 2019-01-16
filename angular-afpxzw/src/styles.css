@@ -185,7 +185,7 @@ content-cards .box .row .column{
 }
 .row{
   /* max-width: 100%; */
-  width: inherit;
+  /* width: inherit; */
 }
 .featured .bookimg-cntr img{
     max-width: 30%;
