@@ -1,6 +1,13 @@
 import { Component, ElementRef } from '@angular/core';
 import { CardsService } from './cards.service';
 
+export interface PageData {
+    "kind": "books#volumes",
+    "totalItems": 1236,
+    "items": [{}]
+ }
+
+
 @Component({
   selector: 'content-cards',
   templateUrl: './contentcards.component.html'
@@ -11,8 +18,9 @@ export class ContentcardsComponent  {
 
   constructor(private dataServ: CardsService, private elRef: ElementRef){
     this.dataServ.getData().subscribe(dataR => {
-      dataR.items.splice(-2, 2);
-      this.contentResp = dataR.items;
+      let dataRep: PageData = dataR;
+      dataRep.items.splice(-2, 2);
+      this.contentResp = dataRep.items;
     });
   }
 
