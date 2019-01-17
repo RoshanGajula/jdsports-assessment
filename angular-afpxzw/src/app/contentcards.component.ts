@@ -1,12 +1,6 @@
 import { Component, ElementRef } from '@angular/core';
 import { CardsService } from './cards.service';
-
-export interface PageData {
-    "kind": "books#volumes",
-    "totalItems": 1236,
-    "items": [{}]
- }
-
+import { PageData } from './pagedata.interface';
 
 @Component({
   selector: 'content-cards',
